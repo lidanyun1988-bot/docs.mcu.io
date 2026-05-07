@@ -7,10 +7,13 @@ const config: Config = {
   tagline: 'MCU 独立开发者文档站 - 开源、开放、可协作',
   favicon: 'img/favicon.ico',
 
-  future: {
-    v4: true,
-  },
+  // future.v4 会自动启用 Rspack/Faster，CI Linux 环境缺少原生绑定
+  // 暂时关闭，等 Rspack Linux 兼容性稳定后再开启
+  // future: {
+  //   v4: true,
+  // },
 
+  // faster 字段不被识别，已移除
   url: 'https://glidanyun1988-bot.github.io',
   baseUrl: '/docs.mcu.io/',
 
