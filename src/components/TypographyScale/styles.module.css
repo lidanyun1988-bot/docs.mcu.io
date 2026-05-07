@@ -1,0 +1,57 @@
+.typographyScale {
+  margin: 24px 0;
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-background-primary);
+}
+
+.typeRow {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  transition: background 0.15s ease;
+}
+
+.typeRow:last-child {
+  border-bottom: none;
+}
+
+.typeRow:hover {
+  background: var(--color-background-secondary);
+}
+
+.typeSpec {
+  font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  min-width: 140px;
+  font-weight: 500;
+}
+
+.typeSample {
+  color: var(--color-text-primary);
+  flex: 1;
+}
+
+.typeDesc {
+  color: var(--color-text-secondary);
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+  .typeRow {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .typeSpec {
+    min-width: 100%;
+    margin-bottom: 4px;
+    font-size: 10px;
+  }
+}

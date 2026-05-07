@@ -1,0 +1,283 @@
+---
+id: design-system-components
+title: 设计系统组件展示
+sidebar_label: 组件展示
+description: 展示所有可用的设计系统组件及其用法示例
+---
+
+import { 
+  PrincipleGrid, 
+  ColorTokenTable, 
+  SpacingRuler, 
+  LiveDemo, 
+  DemoButton, 
+  DemoBadge,
+  TypographyScale 
+} from '@site/src/components/DesignSystem';
+
+# 设计系统组件展示
+
+本文档展示了所有可用的设计系统组件，这些组件可以帮助你创建美观、一致的文档页面。
+
+## 1. 原则卡片网格 (PrincipleGrid)
+
+用于展示设计原则、核心理念等。
+
+<PrincipleGrid cards={[
+  { 
+    icon: '🎯', 
+    title: 'AI 优先', 
+    description: '每页都有结构化摘要，方便 AI 提取和索引' 
+  },
+  { 
+    icon: '🌗', 
+    title: '双主题适配', 
+    description: '亮色/暗色模式自动切换，基于 CSS 变量' 
+  },
+  { 
+    icon: '🧩', 
+    title: '原子化组件', 
+    description: '组件粒度细化到最小可用单元，灵活组合' 
+  },
+  { 
+    icon: '♿', 
+    title: '可访问性', 
+    description: '对比度符合 WCAG AA 标准，支持键盘导航' 
+  },
+]} columns={2} />
+
+**代码示例：**
+
+```mdx
+<PrincipleGrid 
+  cards={[
+    { icon: '🎯', title: 'AI 优先', description: '描述内容' },
+    { icon: '🌗', title: '双主题适配', description: '描述内容' },
+  ]} 
+  columns={2} 
+/>
+```
+
+---
+
+## 2. 颜色 Token 表 (ColorTokenTable)
+
+展示语义化颜色系统，自动适应亮色/暗色模式。
+
+<ColorTokenTable 
+  tokens={[
+    { name: '主文本', description: '正文、标题等主要文本', cssVar: '--color-text-primary' },
+    { name: '次级文本', description: '辅助说明、标签文本', cssVar: '--color-text-secondary' },
+    { name: '三级文本', description: '占位符、禁用文本', cssVar: '--color-text-tertiary' },
+    { name: '主要背景', description: '主要背景（白/深灰）', cssVar: '--color-background-primary' },
+    { name: '次级背景', description: '次级背景、代码块', cssVar: '--color-background-secondary' },
+    { name: '信息背景', description: '信息提示背景', cssVar: '--color-background-info' },
+    { name: '成功背景', description: '成功状态背景', cssVar: '--color-background-success' },
+    { name: '警告背景', description: '警告状态背景', cssVar: '--color-background-warning' },
+    { name: '危险背景', description: '错误/危险状态背景', cssVar: '--color-background-danger' },
+  ]} 
+  showHex={false}
+/>
+
+**代码示例：**
+
+```mdx
+<ColorTokenTable 
+  tokens={[
+    { name: '主文本', description: '正文、标题', cssVar: '--color-text-primary' },
+    { name: '次级文本', description: '辅助说明', cssVar: '--color-text-secondary' },
+  ]} 
+  showHex={false}
+/>
+```
+
+---
+
+## 3. 间距刻度可视化 (SpacingRuler)
+
+展示基于 4px 基准的间距系统。
+
+<SpacingRuler />
+
+**自定义间距值：**
+
+<SpacingRuler 
+  values={[
+    { px: 4, description: '最小间距单位' },
+    { px: 8, description: '紧凑间距' },
+    { px: 16, description: '标准间距' },
+    { px: 24, description: '宽松间距' },
+    { px: 32, description: '大间距' },
+  ]} 
+/>
+
+**代码示例：**
+
+```mdx
+{/* 使用默认值 */}
+<SpacingRuler />
+
+{/* 自定义间距值 */}
+<SpacingRuler 
+  values={[
+    { px: 4, description: '最小间距' },
+    { px: 8, description: '紧凑间距' },
+    { px: 16, description: '标准间距' },
+  ]} 
+/>
+```
+
+---
+
+## 4. 交互式演示区 (LiveDemo)
+
+用于组件预览和交互演示。
+
+### 按钮演示
+
+<LiveDemo title="按钮变体" description="四种语义变体">
+  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+    <DemoButton variant="primary">主要操作</DemoButton>
+    <DemoButton variant="outline">次要操作</DemoButton>
+    <DemoButton variant="ghost">幽灵按钮</DemoButton>
+    <DemoButton variant="danger">危险操作</DemoButton>
+  </div>
+</LiveDemo>
+
+<LiveDemo title="按钮尺寸" description="三种尺寸规格">
+  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+    <DemoButton variant="outline" size="sm">小号 Sm</DemoButton>
+    <DemoButton variant="outline" size="md">默认 Md</DemoButton>
+    <DemoButton variant="outline" size="lg">大号 Lg</DemoButton>
+  </div>
+</LiveDemo>
+
+<LiveDemo title="按钮状态" description="正常、禁用、加载状态">
+  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+    <DemoButton variant="primary">正常</DemoButton>
+    <DemoButton variant="primary" disabled>禁用</DemoButton>
+    <DemoButton variant="outline" loading>加载中</DemoButton>
+  </div>
+</LiveDemo>
+
+### 徽章演示
+
+<LiveDemo title="徽章变体" description="五种语义状态">
+  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
+    <DemoBadge variant="default">默认</DemoBadge>
+    <DemoBadge variant="info">信息</DemoBadge>
+    <DemoBadge variant="success">成功</DemoBadge>
+    <DemoBadge variant="warning">警告</DemoBadge>
+    <DemoBadge variant="danger">危险</DemoBadge>
+  </div>
+</LiveDemo>
+
+**代码示例：**
+
+```mdx
+<LiveDemo title="按钮演示" description="描述内容">
+  <div style={{ display: 'flex', gap: '12px' }}>
+    <DemoButton variant="primary">主要操作</DemoButton>
+    <DemoButton variant="outline">次要操作</DemoButton>
+  </div>
+</LiveDemo>
+
+<LiveDemo title="徽章演示">
+  <div style={{ display: 'flex', gap: '8px' }}>
+    <DemoBadge variant="default">默认</DemoBadge>
+    <DemoBadge variant="success">成功</DemoBadge>
+  </div>
+</LiveDemo>
+```
+
+---
+
+## 5. 字体阶梯 (TypographyScale)
+
+展示完整的字阶系统。
+
+<TypographyScale showSpecs={true} />
+
+**自定义字阶：**
+
+<TypographyScale 
+  levels={[
+    { size: '32px', weight: 700, lineHeight: 1.3, label: '超大标题', description: 'Hero Section' },
+    { size: '24px', weight: 600, lineHeight: 1.4, label: '大标题', description: 'Page Title' },
+    { size: '20px', weight: 600, lineHeight: 1.5, label: '中标题', description: 'Section' },
+    { size: '16px', weight: 500, lineHeight: 1.6, label: '小标题', description: 'Subsection' },
+    { size: '14px', weight: 400, lineHeight: 1.7, label: '正文', description: 'Body Text' },
+  ]} 
+  showSpecs={true}
+/>
+
+**代码示例：**
+
+```mdx
+{/* 使用默认字阶 */}
+<TypographyScale showSpecs={true} />
+
+{/* 自定义字阶 */}
+<TypographyScale 
+  levels={[
+    { size: '32px', weight: 700, lineHeight: 1.3, label: '超大标题' },
+    { size: '24px', weight: 600, lineHeight: 1.4, label: '大标题' },
+    { size: '16px', weight: 400, lineHeight: 1.7, label: '正文' },
+  ]} 
+  showSpecs={true}
+/>
+```
+
+---
+
+## 组件组合使用示例
+
+下面展示如何组合多个组件创建丰富的文档内容：
+
+<PrincipleGrid cards={[
+  { icon: '📐', title: '间距系统', description: '基于 4px 基准，所有间距都是 4 的倍数' },
+  { icon: '🎨', title: '颜色系统', description: '语义化 Token，自动适应主题' },
+]} columns={2} />
+
+<SpacingRuler 
+  values={[
+    { px: 8, description: '按钮内边距' },
+    { px: 16, description: '卡片内边距' },
+    { px: 24, description: '区块间距' },
+  ]} 
+/>
+
+<LiveDemo title="实战示例" description="组合使用组件">
+  <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+    <DemoButton variant="primary">
+      开始使用
+      <DemoBadge variant="success" style={{ marginLeft: '6px' }}>推荐</DemoBadge>
+    </DemoButton>
+    <DemoButton variant="outline">查看文档</DemoButton>
+    <DemoButton variant="ghost">了解更多</DemoButton>
+  </div>
+</LiveDemo>
+
+---
+
+## 最佳实践
+
+### ✅ 推荐用法
+
+1. **保持一致性**：在同一页面中使用相同的组件样式
+2. **语义优先**：选择符合场景的语义变体（如 danger 用于删除操作）
+3. **适度使用**：避免在同一页面堆砌过多演示组件
+4. **响应式考虑**：在移动端测试组件显示效果
+
+### ❌ 避免用法
+
+1. 不要在正式文档中混合使用多种按钮变体
+2. 不要硬编码颜色值，始终使用语义 Token
+3. 不要在演示区放置过多内容（保持简洁）
+4. 不要忽略可访问性（确保足够的对比度）
+
+---
+
+## 相关资源
+
+- [设计系统展示](./design-showcase) - 查看完整设计系统示例

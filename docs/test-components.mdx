@@ -1,0 +1,58 @@
+---
+id: test-components
+title: 组件测试页面
+sidebar_label: 测试页面
+description: 测试设计系统组件是否正常工作
+---
+
+# 组件测试页面
+
+import { 
+  PrincipleGrid, 
+  ColorTokenTable, 
+  SpacingRuler, 
+  LiveDemo, 
+  DemoButton, 
+  DemoBadge,
+  TypographyScale 
+} from '@site/src/components/DesignSystem';
+
+## 测试 1: PrincipleGrid
+
+<PrincipleGrid 
+  cards={[
+    { icon: '🎯', title: '测试 1', description: '如果看到这个，PrincipleGrid 组件正常工作' },
+    { icon: '✅', title: '测试 2', description: '第二个测试卡片' },
+  ]} 
+  columns={2} 
+/>
+
+## 测试 2: ColorTokenTable
+
+<ColorTokenTable 
+  tokens={[
+    { name: '主文本', description: '正文、标题', cssVar: '--color-text-primary' },
+    { name: '次级文本', description: '辅助说明', cssVar: '--color-text-secondary' },
+  ]} 
+/>
+
+## 测试 3: SpacingRuler
+
+<SpacingRuler />
+
+## 测试 4: LiveDemo
+
+<LiveDemo title="按钮测试">
+  <div style={{ display: 'flex', gap: '12px' }}>
+    <DemoButton variant="primary">主要按钮</DemoButton>
+    <DemoButton variant="outline">轮廓按钮</DemoButton>
+  </div>
+</LiveDemo>
+
+## 测试 5: TypographyScale
+
+<TypographyScale showSpecs={true} />
+
+---
+
+**如果所有组件都正常显示，说明组件系统工作正常！** ✅

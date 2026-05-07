@@ -1,0 +1,63 @@
+.spacingRuler {
+  margin: 24px 0;
+  padding: 20px;
+  background: var(--color-background-secondary);
+  border-radius: 12px;
+  border: 0.5px solid var(--color-border-tertiary);
+}
+
+.spaceRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.spaceRow:last-child {
+  margin-bottom: 0;
+}
+
+.spaceBar {
+  height: 20px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.spaceRow:hover .spaceBar {
+  transform: scaleX(1.05);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.spaceLabel {
+  font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  min-width: 48px;
+  text-align: right;
+}
+
+.spaceDesc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .spaceRow {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .spaceLabel {
+    min-width: 40px;
+  }
+  
+  .spaceDesc {
+    width: 100%;
+    margin-left: 64px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,138 @@
+---
+id: design-showcase
+title: 设计系统展示
+sidebar_label: 设计展示
+description: 展示新的暖色调有机设计系统
+---
+
+# 设计系统展示
+
+本文档展示了基于 DESIGN.md 的全新设计系统，采用暖色调有机风格，为开发者提供舒适的阅读体验。
+
+## 色彩系统
+
+我们的设计系统采用自然材料启发的配色方案：
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', margin: '24px 0'}}>
+  <div style={{background: '#334f2b', color: '#ffffff', padding: '16px', borderRadius: '12px', textAlign: 'center'}}>
+    <div style={{fontSize: '24px', fontWeight: 'bold', marginBottom: '8px'}}>Primary</div>
+    <div style={{fontSize: '14px', opacity: 0.9}}>鼠尾草绿 #334f2b</div>
+  </div>
+  <div style={{background: '#fe932c', color: '#ffffff', padding: '16px', borderRadius: '12px', textAlign: 'center'}}>
+    <div style={{fontSize: '24px', fontWeight: 'bold', marginBottom: '8px'}}>Secondary</div>
+    <div style={{fontSize: '14px', opacity: 0.9}}>暖琥珀 #fe932c</div>
+  </div>
+  <div style={{background: '#fcf9f8', color: '#1b1c1c', padding: '16px', borderRadius: '12px', textAlign: 'center', border: '1px solid #c3c8bd'}}>
+    <div style={{fontSize: '24px', fontWeight: 'bold', marginBottom: '8px'}}>Surface</div>
+    <div style={{fontSize: '14px', opacity: 0.9}}>奶油色 #fcf9f8</div>
+  </div>
+</div>
+
+## 功能特性卡片
+
+<div class="feature-grid">
+  <div class="feature-card">
+    <div class="feature-card__icon"></div>
+    <div class="feature-card__title">卓越的处理能力</div>
+    <div class="feature-card__description">主频高达 168MHz，210 DMIPS 性能，支持单精度 FPU 和 DSP 指令集，快速复杂运算并行。</div>
+  </div>
+  <div class="feature-card">
+    <div class="feature-card__icon">💾</div>
+    <div class="feature-card__title">大容量存储空间</div>
+    <div class="feature-card__description">集成高达 1MB 的 Flash 存储器和 192KB 的 SRAM，满足复杂应用和代码高效存储需求。</div>
+  </div>
+  <div class="feature-card">
+    <div class="feature-card__icon">🔌</div>
+    <div class="feature-card__title">丰富的外设接口</div>
+    <div class="feature-card__description">包含 USB FS/HS、以太网 MAC、CAN 2.0B、SDIO、I2S 以及多个 USART/ADC 和 DAC。</div>
+  </div>
+  <div class="feature-card">
+    <div class="feature-card__icon">🛡️</div>
+    <div class="feature-card__title">高可靠性设计</div>
+    <div class="feature-card__description">支持硬件看门狗、CRC 校验、AES 加密单元，提供芯片级软硬件保护，确保系统稳定运行。</div>
+  </div>
+</div>
+
+## 表格样式
+
+| 型号 | 主频 (MHz) | Flash (KB) | SRAM (KB) | 封装 |
+|------|-----------|-----------|----------|------|
+| XX32F401V0 | 168 | 1024 | 192 | LQFP100 |
+| XX32F401T0 | 168 | 512 | 192 | LQFP144 |
+| XX32F413R0 | 100 | 512 | 128 | LQFP64 |
+| XX32F413B0 | 180 | 2048 | 256 | TFBGA256 |
+
+## 应用场景
+
+<div style={{display: 'flex', flexWrap: 'wrap', gap: '8px', margin: '24px 0'}}>
+  <span class="app-tag">数字信号处理</span>
+  <span class="app-tag">工业电机控制</span>
+  <span class="app-tag app-tag--amber">高等音频设备</span>
+  <span class="app-tag">医疗设备</span>
+  <span class="app-tag">智能家居网关</span>
+  <span class="app-tag app-tag--amber">UPS 电源逆变器</span>
+</div>
+
+## 代码块示例
+
+```typescript
+// 初始化 MCU 时钟系统
+function initClockSystem() {
+  // 配置 PLL 参数
+  const pllConfig = {
+    source: 'HSE',
+    multiplier: 168,
+    divider: 8
+  };
+  
+  // 启用 Flash 预取
+  FLASH.ACR |= FLASH_ACR_PRFTEN;
+  
+  // 设置等待周期
+  FLASH.ACR |= FLASH_ACR_LATENCY_5WS;
+  
+  console.log('Clock system initialized');
+}
+```
+
+## 提示框样式
+
+<div class="callout callout--info">
+  <div class="callout__icon">ℹ️</div>
+  <div>
+    <div class="callout__title">信息提示</div>
+    <div class="callout__body">本系列微控制器集成了浮点运算单元 (FPU) 和 DSP 指令集，非常适合需要高数学运算和实时控制的应用场景。</div>
+  </div>
+</div>
+
+<div class="callout callout--warning">
+  <div class="callout__icon">⚠️</div>
+  <div>
+    <div class="callout__title">注意事项</div>
+    <div class="callout__body">在配置时钟系统时，请确保外部晶振频率与配置参数匹配，否则可能导致系统不稳定。</div>
+  </div>
+</div>
+
+<div class="callout callout--success">
+  <div class="callout__icon">✅</div>
+  <div>
+    <div class="callout__title">最佳实践</div>
+    <div class="callout__body">建议在项目开始时使用 STM32CubeMX 工具生成初始化代码，可以大幅减少配置错误。</div>
+  </div>
+</div>
+
+## 按钮样式
+
+<div style={{display: 'flex', gap: '16px', margin: '24px 0'}}>
+  <button class="button button--primary">主要按钮</button>
+  <button class="button button--secondary">次要按钮</button>
+</div>
+
+## 标签样式
+
+<div style={{display: 'flex', gap: '8px', margin: '24px 0', flexWrap: 'wrap'}}>
+  <span class="chip">STM32F4</span>
+  <span class="chip chip--amber">Cortex-M4</span>
+  <span class="chip">ARM</span>
+  <span class="chip chip--amber">168MHz</span>
+</div>

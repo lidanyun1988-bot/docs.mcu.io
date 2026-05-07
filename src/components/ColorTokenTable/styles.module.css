@@ -1,0 +1,82 @@
+.colorTokenTable {
+  margin: 24px 0;
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-background-primary);
+}
+
+.tokenRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  transition: background 0.15s ease;
+}
+
+.tokenRow:last-child {
+  border-bottom: none;
+}
+
+.tokenRow:hover {
+  background: var(--color-background-secondary);
+}
+
+.tokenSwatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tokenInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.tokenName {
+  font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
+  font-size: 12px;
+  color: var(--color-text-info, var(--ifm-color-primary));
+  background: var(--color-background-info);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.tokenHex {
+  font-family: 'JetBrains Mono', 'Cascadia Code', monospace;
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  background: var(--color-background-tertiary);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.tokenDesc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  flex: 1;
+  min-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .tokenRow {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .tokenInfo {
+    width: 100%;
+  }
+  
+  .tokenDesc {
+    width: 100%;
+    margin-top: 4px;
+  }
+}

@@ -1,0 +1,44 @@
+.principleGrid {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.principleCard {
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.2s ease;
+  background: var(--color-background-primary);
+}
+
+.principleCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-border-secondary);
+  transform: translateY(-2px);
+}
+
+.principleIcon {
+  font-size: 24px;
+  color: var(--color-text-info, var(--ifm-color-primary));
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.principleTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.principleText {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+[data-theme='dark'] .principleCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
