@@ -28,7 +28,7 @@ sidebar_position: 5
 
 ### 🛒 采购/选型
 - [型号选择](#q-如何选择适合的型号)
-- [供货情况](#q-哪里可以购买)
+- [供货情况](#q-哪里可以购买-xx32-产品)
 
 </div>
 
@@ -57,7 +57,7 @@ A: XX32F103 从上电复位到执行 main() 函数约 **2-3ms**，与 STM32F103 
 2. 降低系统时钟频率
 3. 精简 SystemInit 函数
 
-参考文档：[时钟配置](../peripheral-drivers/index)
+参考文档：[时钟配置](../peripheral-drivers/)
 
 ---
 
