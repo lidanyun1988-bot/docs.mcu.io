@@ -17,8 +17,8 @@ const config: Config = {
   url: 'https://glidanyun1988-bot.github.io',
   baseUrl: '/docs.mcu.io/',
 
-  organizationName: 'your-org',
-  projectName: 'developer-hub-docs',
+  organizationName: 'glidanyun1988-bot',
+  projectName: 'docs.mcu.io',
 
   onBrokenLinks: 'throw',
 
@@ -33,7 +33,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/your-org/developer-hub-docs/edit/main/',
+          editUrl: 'https://lidanyun1988-bot.github.io/docs.mcu.io/docs/',
           showLastUpdateTime: false,
           showLastUpdateAuthor: false,
           sidebarCollapsible: true,
